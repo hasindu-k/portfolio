@@ -9,7 +9,7 @@
 
 - 👨‍💻 My portfolio website [https://hasindu-k.github.io/portfolio/](https://hasindu-k.github.io/portfolio/)
 
-- 💬 Ask me about **Python, HTML, CSS, SQL**
+- 💬 Ask me about **HTML, CSS, SQL, Java, C, Python**
 
 - 📫 How to reach me **koshithahasindu@gmail.com**
 
