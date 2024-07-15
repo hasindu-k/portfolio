@@ -159,6 +159,17 @@ body {
 .btn-box:hover {
     box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50pc cyan, 0 0 100px cyan, 0 0 200px cyan;
 }
+.btn-certificate{
+    margin-top: 2vh;
+}
+
+.certificate-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4vh;
+    /* height: 100vh; Full height to center vertically as well */
+}
 
 .img {
     display: inline-block;
