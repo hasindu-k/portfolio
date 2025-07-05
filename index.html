@@ -4,8 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <meta name="description" content="Hasindu Koshitha - Software Engineering Student Portfolio" />
+    <meta name="keywords" content="portfolio, software engineering, web development, mobile development" />
+    <title>Hasindu Koshitha - Portfolio</title>
     <link rel="shortcut icon" type="image/png" href="icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./files/style.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -14,6 +19,11 @@
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
   </head>
   <body>
+    <!-- Loading Screen -->
+    <div class="loading">
+      <div class="loading-spinner"></div>
+    </div>
+    
     <header class="header">
       <a href="#" class="logo">Portfolio</a>
       <nav class="navbar" id="myLinks">
@@ -119,7 +129,7 @@
                 <span>HTML <span class="addhtml"></span></span>
               </div>
               <div class="progress-line html">
-                <span></span>
+                <span data-width="90"></span>
               </div>
             </div>
 
@@ -129,7 +139,7 @@
                 <span>CSS <span class="addcss"></span></span>
               </div>
               <div class="progress-line css">
-                <span></span>
+                <span data-width="85"></span>
               </div>
             </div>
 
@@ -139,7 +149,7 @@
                 <span>Python <span class="addpy"></span></span>
               </div>
               <div class="progress-line python">
-                <span></span>
+                <span data-width="80"></span>
               </div>
             </div>
 
@@ -149,7 +159,7 @@
                 <span>Java <span class="addjava"></span></span>
               </div>
               <div class="progress-line java">
-                <span></span>
+                <span data-width="75"></span>
               </div>
             </div>
 
@@ -159,7 +169,7 @@
                 <span>C/C++ <span class="addc"></span></span>
               </div>
               <div class="progress-line cpls">
-                <span></span>
+                <span data-width="70"></span>
               </div>
             </div>
           </div>
@@ -170,8 +180,8 @@
           <div class="radial-bars">
             <div class="radial-bar">
               <svg x="0px" y="0px" viewBox="0 0 200 200">
-                <circle class="progress-bar" cx="100" cy="80" r="80"></circle>
-                <circle class="path path-1" cx="100" cy="80" r="80"></circle>
+                <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                <circle class="path path-1" cx="100" cy="100" r="80"></circle>
               </svg>
               <div class="percentage">75%</div>
               <div class="text">Problem Solving</div>
@@ -179,8 +189,8 @@
 
             <div class="radial-bar">
               <svg x="0px" y="0px" viewBox="0 0 200 200">
-                <circle class="progress-bar" cx="100" cy="80" r="80"></circle>
-                <circle class="path path-2" cx="100" cy="80" r="80"></circle>
+                <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                <circle class="path path-2" cx="100" cy="100" r="80"></circle>
               </svg>
               <div class="percentage">70%</div>
               <div class="text">Creativity</div>
@@ -188,8 +198,8 @@
 
             <div class="radial-bar">
               <svg x="0px" y="0px" viewBox="0 0 200 200">
-                <circle class="progress-bar" cx="100" cy="80" r="80"></circle>
-                <circle class="path path-3" cx="100" cy="80" r="80"></circle>
+                <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                <circle class="path path-3" cx="100" cy="100" r="80"></circle>
               </svg>
               <div class="percentage">80%</div>
               <div class="text">Communication</div>
@@ -197,8 +207,8 @@
 
             <div class="radial-bar">
               <svg x="0px" y="0px" viewBox="0 0 200 200">
-                <circle class="progress-bar" cx="100" cy="80" r="80"></circle>
-                <circle class="path path-4" cx="100" cy="80" r="80"></circle>
+                <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+                <circle class="path path-4" cx="100" cy="100" r="80"></circle>
               </svg>
               <div class="percentage">90%</div>
               <div class="text">Teamwork</div>
