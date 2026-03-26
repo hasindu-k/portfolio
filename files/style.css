@@ -369,3 +369,44 @@ body.light #menu-icon {
     background: var(--primary);
     color: black;
 }
+
+/* PRELOADER */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+.preloader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.terminal-loader {
+    font-size: 20px;
+    color: var(--primary);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.loader-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background: var(--primary);
+    animation: blink 1s infinite alternate;
+    margin-left: 5px;
+}
+
+body.light .preloader {
+    background: #fff;
+}

@@ -63,7 +63,17 @@ function typeRole() {
 
 // Start animation
 window.onload = () => {
-  typeLine1();
+  const preloader = document.getElementById("preloader");
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add("hidden");
+      setTimeout(() => {
+        typeLine1();
+      }, 500); // slightly delay typing animation after fade out
+    }, 800); // 800ms simulated load time
+  } else {
+    typeLine1();
+  }
 };
 
 const initText = "> initializing profile...";
