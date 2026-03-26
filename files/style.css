@@ -235,6 +235,30 @@ section {
     margin-bottom: 15px;
 }
 
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.tech-tag {
+    font-size: 11px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 3px 8px;
+    border: 1px solid rgba(0, 255, 30, 0.3);
+    color: var(--primary);
+    background: rgba(0, 255, 30, 0.05);
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.tech-tag:hover {
+    background: var(--primary);
+    color: #000;
+}
+
 /* CONTACT */
 .contact p {
     margin: 10px 0;
@@ -515,6 +539,18 @@ body.light .project-card h3 { color: #007a10; }
 body.light .project-card:hover {
     box-shadow: 0 5px 20px rgba(0, 130, 20, 0.2);
     border-color: #007a10;
+}
+
+/* Project Tech Light Mode */
+body.light .tech-tag {
+    border-color: rgba(0, 122, 16, 0.3);
+    color: #007a10;
+    background: rgba(0, 122, 16, 0.05);
+}
+
+body.light .tech-tag:hover {
+    background: #007a10;
+    color: #fff;
 }
 
 /* Project links */
