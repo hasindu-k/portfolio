@@ -172,27 +172,57 @@ section {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
+    justify-content: center; /* Center them on mobile/desktop better */
+    margin-top: 20px;
 }
 
 .skill-card {
-    padding: 10px 20px;
-    border: 1px solid var(--primary);
+    padding: 12px 24px;
+    border: 1px solid rgba(0, 255, 30, 0.4);
     background: #111;
-    transition: 0.3s;
+    color: #eee;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-card::before {
+    content: "> ";
+    color: var(--primary);
+    font-weight: bold;
 }
 
 .skill-card:hover {
     background: var(--primary);
-    color: black;
+    color: #000;
+    border-color: var(--primary);
+    box-shadow: 0 0 15px var(--primary);
+    transform: translateY(-5px);
+}
+
+.skill-card:hover::before {
+    color: #000;
 }
 
 /* PROJECTS */
 .project-card {
     margin-bottom: 20px;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 255, 30, 0.3);
+    border-color: var(--primary);
 }
 
 .project-card h3 {
     color: var(--primary);
+    margin-bottom: 15px;
 }
 
 /* CONTACT */
@@ -206,6 +236,41 @@ section {
     .home {
         flex-direction: column;
         text-align: center;
+        padding: 100px 5% 50px;
+        justify-content: center;
+    }
+
+    .home-content h1 {
+        font-size: 34px;
+        line-height: 1.2;
+    }
+
+    .home-content h3 {
+        font-size: 18px;
+    }
+
+    .btn-group {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 25px;
+    }
+
+    .btn, .btn-outline {
+        margin: 0;
+    }
+
+    .home-img {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .profile-terminal {
+        width: 100%;
+        max-width: 300px;
     }
 
     .home-img img {
