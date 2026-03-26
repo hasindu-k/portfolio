@@ -47,6 +47,13 @@ body {
     color: var(--primary);
 }
 
+#menu-icon {
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
 /* HOME */
 .home {
     display: flex;
@@ -216,9 +223,37 @@ section {
     }
 
     .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        background: #000;
+        border-bottom: 1px solid rgba(0, 255, 30, 0.2);
         display: none;
+        flex-direction: column;
+        text-align: center;
+        transition: 0.3s;
     }
 
+    .navbar a {
+        display: block;
+        margin: 15px 0;
+        font-size: 20px;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    body.light .navbar {
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+    }
 }
 
 /* PROFILE TERMINAL */
@@ -313,6 +348,10 @@ body.light .navbar a {
 }
 
 body.light .section-title {
+    color: #000;
+}
+
+body.light #menu-icon {
     color: #000;
 }
 

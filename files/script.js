@@ -5,6 +5,13 @@ menuIcon.onclick = () => {
   navbar.classList.toggle("active");
 };
 
+const navLinks = document.querySelectorAll(".navbar a");
+navLinks.forEach(link => {
+  link.onclick = () => {
+    navbar.classList.remove("active");
+  };
+});
+
 // ===== TERMINAL TYPING EFFECT =====
 
 // First line typing
