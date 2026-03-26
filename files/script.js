@@ -91,12 +91,21 @@ typeInit();
 
 const toggle = document.getElementById("theme-toggle");
 
+// Restore saved theme on load
+if (localStorage.getItem("theme") === "light") {
+  document.body.classList.add("light");
+  toggle.innerText = "🌞";
+}
+
 toggle.onclick = () => {
   document.body.classList.toggle("light");
 
   if (document.body.classList.contains("light")) {
     toggle.innerText = "🌞";
+    localStorage.setItem("theme", "light");
   } else {
     toggle.innerText = "🌙";
+    localStorage.setItem("theme", "dark");
   }
 };
+

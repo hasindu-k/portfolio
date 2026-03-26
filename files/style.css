@@ -65,16 +65,24 @@ body {
 
 .home-content h1 {
     font-size: 48px;
-    margin: 10px 0;
+    margin: 18px 0;
 }
 
 .home-content h3 {
     color: var(--primary);
+    margin: 12px 0;
 }
 
 .home-content p {
-    margin: 15px 0;
+    margin: 20px 0;
     color: #aaa;
+}
+
+.btn-group {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 
@@ -172,7 +180,8 @@ section {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
-    justify-content: center; /* Center them on mobile/desktop better */
+    justify-content: center;
+    /* Center them on mobile/desktop better */
     margin-top: 20px;
 }
 
@@ -230,6 +239,51 @@ section {
     margin: 10px 0;
 }
 
+.contact .terminal-body a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact .terminal-body a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+/* SOCIAL LINKS */
+.social-links {
+    display: flex;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.social-links a {
+    color: var(--primary);
+    font-size: 28px;
+    transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    transform: translateY(-4px);
+    text-shadow: 0 0 12px var(--primary);
+    color: #fff;
+}
+
+body.light .social-links a {
+    color: #007a10;
+}
+
+body.light .social-links a:hover {
+    color: #005a0c;
+    text-shadow: 0 0 12px rgba(0, 130, 20, 0.5);
+}
+
+body.light .contact .terminal-body a {
+    color: #007a10;
+}
+
+
 /* MOBILE */
 @media (max-width: 768px) {
 
@@ -257,7 +311,8 @@ section {
         margin-top: 25px;
     }
 
-    .btn, .btn-outline {
+    .btn,
+    .btn-outline {
         margin: 0;
     }
 
@@ -382,31 +437,114 @@ section {
     cursor: pointer;
 }
 
-/* LIGHT MODE */
+/* ======== LIGHT MODE ======== */
+body, .header, .terminal-window, .terminal-header, .terminal-body,
+.skill-card, .project-card, .navbar {
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 body.light {
-    background: #ffffff;
-    color: #000;
+    background: #f0f0f0;
+    color: #111;
 }
 
 body.light .header {
     background: #fff;
+    border-bottom: 1px solid rgba(0, 160, 20, 0.3);
 }
 
-body.light .terminal-window {
-    background: #f5f5f5;
-    border-color: #000;
+body.light .logo {
+    color: #007a10;
 }
 
 body.light .navbar a {
-    color: #000;
+    color: #333;
 }
 
-body.light .section-title {
-    color: #000;
+body.light .navbar a:hover,
+body.light .navbar a.active {
+    color: #007a10;
 }
 
 body.light #menu-icon {
-    color: #000;
+    color: #111;
+}
+
+body.light .navbar {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Home content */
+body.light .home-content h1 { color: #111; }
+body.light .home-content h3 { color: #007a10; }
+body.light .home-content p  { color: #444; }
+body.light .init-text        { color: #007a10; }
+body.light .prompt           { color: #007a10; }
+
+/* Terminals */
+body.light .terminal-window {
+    background: #fff;
+    border-color: rgba(0, 130, 20, 0.4);
+}
+body.light .terminal-header { background: #e8e8e8; }
+body.light .terminal-title  { color: #666; }
+body.light .terminal-body   { color: #222; }
+
+/* Section titles */
+body.light .section-title { color: #007a10; }
+
+/* Skill cards */
+body.light .skill-card {
+    background: #fff;
+    border-color: rgba(0, 130, 20, 0.35);
+    color: #111;
+}
+body.light .skill-card::before { color: #007a10; }
+body.light .skill-card:hover {
+    background: #007a10;
+    color: #fff;
+    border-color: #007a10;
+    box-shadow: 0 0 15px rgba(0, 130, 20, 0.4);
+}
+body.light .skill-card:hover::before { color: #fff; }
+
+/* Project cards */
+body.light .project-card h3 { color: #007a10; }
+body.light .project-card:hover {
+    box-shadow: 0 5px 20px rgba(0, 130, 20, 0.2);
+    border-color: #007a10;
+}
+
+/* Project links */
+body.light .project-links a {
+    border-color: #007a10;
+    color: #007a10;
+}
+body.light .project-links a:hover {
+    background: #007a10;
+    color: #fff;
+}
+
+/* Buttons */
+body.light .btn { background: #007a10; color: #fff; }
+body.light .btn:hover { box-shadow: 0 0 15px rgba(0, 130, 20, 0.5); }
+body.light .btn-outline { border-color: #007a10; color: #007a10; }
+body.light .btn-outline:hover { background: #007a10; color: #fff; }
+
+/* Theme toggle */
+body.light #theme-toggle { border-color: #007a10; color: #007a10; }
+
+/* Preloader */
+body.light .preloader      { background: #f0f0f0; }
+body.light .terminal-loader{ color: #007a10; }
+body.light .loader-cursor  { background: #007a10; }
+
+/* Profile terminal glow */
+body.light .profile-terminal { animation: pulse-light 2s infinite alternate; }
+@keyframes pulse-light {
+    from { box-shadow: 0 0 10px rgba(0, 130, 20, 0.3); }
+    to   { box-shadow: 0 0 25px rgba(0, 130, 20, 0.5); }
 }
 
 .projects-container {
