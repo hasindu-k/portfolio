@@ -77,16 +77,6 @@ body {
     color: #aaa;
 }
 
-/* IMAGE */
-.home-img img {
-    width: 260px;
-    box-shadow: 0 0 20px var(--primary);
-    transition: 0.3s;
-}
-
-.home-img img:hover {
-    transform: scale(1.05);
-}
 
 /* BUTTONS */
 .btn {
@@ -261,6 +251,7 @@ section {
     width: 280px;
     overflow: hidden;
     border-radius: 10px;
+    animation: pulse 2s infinite alternate;
 }
 
 /* IMAGE INSIDE TERMINAL */
@@ -268,15 +259,13 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
 }
 
 .image-body img {
     width: 100%;
-    max-width: 240px;
     height: auto;
     object-fit: cover;
-    animation: pulse 2s infinite alternate;
+    transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .image-body img:hover {
