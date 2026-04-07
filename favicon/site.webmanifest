@@ -1,0 +1,47 @@
+{
+	"name": "Hasindu Koshitha Portfolio",
+	"short_name": "Portfolio",
+	"id": "/",
+	"description": "Portfolio website of Hasindu Koshitha, Software Engineer focused on Full Stack, DevOps, and AI.",
+	"lang": "en-US",
+	"start_url": "/",
+	"scope": "/",
+	"orientation": "portrait-primary",
+	"icons": [
+		{
+			"src": "android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "android-chrome-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any maskable"
+		}
+	],
+	"theme_color": "#000000",
+	"background_color": "#0c0c0c",
+	"display": "standalone",
+	"display_override": [
+		"standalone",
+		"minimal-ui"
+	],
+	"categories": [
+		"business",
+		"productivity"
+	],
+	"shortcuts": [
+		{
+			"name": "Projects",
+			"short_name": "Projects",
+			"url": "/#projects"
+		},
+		{
+			"name": "Contact",
+			"short_name": "Contact",
+			"url": "/#contact"
+		}
+	]
+}
