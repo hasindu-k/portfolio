@@ -92,9 +92,9 @@ typeInit();
 const toggle = document.getElementById("theme-toggle");
 
 // Restore saved theme on load
-if (localStorage.getItem("theme") === "light") {
-  document.body.classList.add("light");
-  toggle.innerText = "🌞";
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.remove("light");
+  toggle.innerText = "🌙";
 }
 
 toggle.onclick = () => {
