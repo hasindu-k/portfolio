@@ -61,6 +61,200 @@ body {
     align-items: center;
     padding: 120px 10%;
     min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(0, 255, 30, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 30, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.glow-orb {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+    filter: blur(100px);
+    opacity: 0.12;
+    z-index: 0;
+    pointer-events: none;
+    animation: floatOrb 15s infinite alternate ease-in-out;
+}
+
+.orb-1 {
+    top: -100px;
+    left: -100px;
+}
+
+.orb-2 {
+    bottom: -100px;
+    right: -100px;
+    animation-delay: -5s;
+}
+
+@keyframes floatOrb {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(100px, 50px) scale(1.1);
+    }
+}
+
+/* FLOATING ICONS */
+.floating-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.floating-icon {
+    position: absolute;
+    font-size: 3rem;
+    color: var(--primary);
+    opacity: 0.15;
+    animation: floatIcon 20s linear infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 30, 0.2));
+}
+
+.icon-1 {
+    top: 22%;
+    left: 58%;
+    animation-duration: 25s;
+    animation-delay: 0s;
+    font-size: 4rem;
+}
+
+.icon-2 {
+    top: 70%;
+    left: 29%;
+    animation-duration: 22s;
+    animation-delay: -5s;
+    font-size: 2.5rem;
+}
+
+.icon-3 {
+    top: 20%;
+    right: 49%;
+    animation-duration: 28s;
+    animation-delay: -2s;
+    font-size: 3.5rem;
+}
+
+.icon-4 {
+    top: 62%;
+    right: 40%;
+    animation-duration: 20s;
+    animation-delay: -10s;
+    font-size: 3rem;
+}
+
+.icon-5 {
+    top: 40%;
+    left: 50%;
+    animation-duration: 26s;
+    animation-delay: -7s;
+    font-size: 2rem;
+}
+
+.icon-6 {
+    top: 80%;
+    left: 40%;
+    animation-duration: 24s;
+    animation-delay: -12s;
+    font-size: 3.5rem;
+}
+
+@keyframes floatIcon {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* SCROLL INDICATOR */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 2;
+    animation: bounce 2s infinite;
+}
+
+.scroll-indicator a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.scroll-indicator i {
+    font-size: 24px;
+    color: var(--primary);
+}
+
+.scroll-indicator a:hover {
+    opacity: 1;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0) translateX(-50%);
+    }
+
+    40% {
+        transform: translateY(-15px) translateX(-50%);
+    }
+
+    60% {
+        transform: translateY(-7px) translateX(-50%);
+    }
+}
+
+.home-content,
+.home-img {
+    position: relative;
+    z-index: 1;
 }
 
 .home-content h1 {
@@ -389,6 +583,67 @@ body.light .contact .terminal-body a {
         background: #fff;
         border-bottom: 1px solid #ddd;
     }
+
+    /* Fix floating icons on mobile */
+    .floating-icon {
+        font-size: 1.5rem !important;
+        opacity: 0.08;
+    }
+
+    .icon-1 {
+        top: 9%;
+        left: 5%;
+        font-size: 2rem !important;
+    }
+
+    .icon-3 {
+        top: 14%;
+        right: 5%;
+        font-size: 1.5rem !important;
+    }
+
+    .icon-5 {
+        top: 25%;
+        left: 80%;
+    }
+
+    .icon-2,
+    .icon-4,
+    .icon-6 {
+        display: none;
+    }
+
+    /* Fix scroll indicator on mobile */
+    .scroll-indicator {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin-top: 40px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        animation: bounceMobile 2s infinite;
+    }
+}
+
+@keyframes bounceMobile {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-15px);
+    }
+
+    60% {
+        transform: translateY(-7px);
+    }
 }
 
 /* PROFILE TERMINAL */
@@ -463,8 +718,14 @@ body.light .contact .terminal-body a {
 }
 
 /* ======== LIGHT MODE ======== */
-body, .header, .terminal-window, .terminal-header, .terminal-body,
-.skill-card, .project-card, .navbar {
+body,
+.header,
+.terminal-window,
+.terminal-header,
+.terminal-body,
+.skill-card,
+.project-card,
+.navbar {
     transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -501,23 +762,73 @@ body.light .navbar {
 }
 
 /* Home content */
-body.light .home-content h1 { color: #111; }
-body.light .home-content h3 { color: #007a10; }
-body.light .home-content p  { color: #444; }
-body.light .init-text        { color: #007a10; }
-body.light .prompt           { color: #007a10; }
+body.light .home-content h1 {
+    color: #111;
+}
+
+body.light .home-content h3 {
+    color: #007a10;
+}
+
+body.light .home-content p {
+    color: #444;
+}
+
+body.light .init-text {
+    color: #007a10;
+}
+
+body.light .prompt {
+    color: #007a10;
+}
+
+body.light .scroll-indicator a {
+    color: #444;
+}
+
+body.light .scroll-indicator i {
+    color: #007a10;
+}
+
+body.light .home::before {
+    background-image:
+        linear-gradient(rgba(0, 122, 16, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 122, 16, 0.08) 1px, transparent 1px);
+}
+
+body.light .glow-orb {
+    background: radial-gradient(circle, rgba(0, 122, 16, 0.4) 0%, transparent 70%);
+    opacity: 0.2;
+}
+
+body.light .floating-icon {
+    color: #007a10;
+    opacity: 0.15;
+    filter: drop-shadow(0 0 10px rgba(0, 122, 16, 0.2));
+}
 
 /* Terminals */
 body.light .terminal-window {
     background: #fff;
     border-color: rgba(0, 130, 20, 0.4);
 }
-body.light .terminal-header { background: #e8e8e8; }
-body.light .terminal-title  { color: #666; }
-body.light .terminal-body   { color: #222; }
+
+body.light .terminal-header {
+    background: #e8e8e8;
+}
+
+body.light .terminal-title {
+    color: #666;
+}
+
+body.light .terminal-body {
+    color: #222;
+}
 
 /* Section titles */
-body.light .section-title { color: #007a10; }
+body.light .section-title {
+    color: #007a10;
+}
 
 /* Skill cards */
 body.light .skill-card {
@@ -525,17 +836,27 @@ body.light .skill-card {
     border-color: rgba(0, 130, 20, 0.35);
     color: #111;
 }
-body.light .skill-card::before { color: #007a10; }
+
+body.light .skill-card::before {
+    color: #007a10;
+}
+
 body.light .skill-card:hover {
     background: #007a10;
     color: #fff;
     border-color: #007a10;
     box-shadow: 0 0 15px rgba(0, 130, 20, 0.4);
 }
-body.light .skill-card:hover::before { color: #fff; }
+
+body.light .skill-card:hover::before {
+    color: #fff;
+}
 
 /* Project cards */
-body.light .project-card h3 { color: #007a10; }
+body.light .project-card h3 {
+    color: #007a10;
+}
+
 body.light .project-card:hover {
     box-shadow: 0 5px 20px rgba(0, 130, 20, 0.2);
     border-color: #007a10;
@@ -558,30 +879,64 @@ body.light .project-links a {
     border-color: #007a10;
     color: #007a10;
 }
+
 body.light .project-links a:hover {
     background: #007a10;
     color: #fff;
 }
 
 /* Buttons */
-body.light .btn { background: #007a10; color: #fff; }
-body.light .btn:hover { box-shadow: 0 0 15px rgba(0, 130, 20, 0.5); }
-body.light .btn-outline { border-color: #007a10; color: #007a10; }
-body.light .btn-outline:hover { background: #007a10; color: #fff; }
+body.light .btn {
+    background: #007a10;
+    color: #fff;
+}
+
+body.light .btn:hover {
+    box-shadow: 0 0 15px rgba(0, 130, 20, 0.5);
+}
+
+body.light .btn-outline {
+    border-color: #007a10;
+    color: #007a10;
+}
+
+body.light .btn-outline:hover {
+    background: #007a10;
+    color: #fff;
+}
 
 /* Theme toggle */
-body.light #theme-toggle { border-color: #007a10; color: #007a10; }
+body.light #theme-toggle {
+    border-color: #007a10;
+    color: #007a10;
+}
 
 /* Preloader */
-body.light .preloader      { background: #f0f0f0; }
-body.light .terminal-loader{ color: #007a10; }
-body.light .loader-cursor  { background: #007a10; }
+body.light .preloader {
+    background: #f0f0f0;
+}
+
+body.light .terminal-loader {
+    color: #007a10;
+}
+
+body.light .loader-cursor {
+    background: #007a10;
+}
 
 /* Profile terminal glow */
-body.light .profile-terminal { animation: pulse-light 2s infinite alternate; }
+body.light .profile-terminal {
+    animation: pulse-light 2s infinite alternate;
+}
+
 @keyframes pulse-light {
-    from { box-shadow: 0 0 10px rgba(0, 130, 20, 0.3); }
-    to   { box-shadow: 0 0 25px rgba(0, 130, 20, 0.5); }
+    from {
+        box-shadow: 0 0 10px rgba(0, 130, 20, 0.3);
+    }
+
+    to {
+        box-shadow: 0 0 25px rgba(0, 130, 20, 0.5);
+    }
 }
 
 .projects-container {
@@ -649,4 +1004,28 @@ body.light .profile-terminal { animation: pulse-light 2s infinite alternate; }
 
 body.light .preloader {
     background: #fff;
+}
+
+.home {
+    background: linear-gradient(-45deg, #000000, #0c0c0c, #001a0f, #000000);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+}
+
+body.light .home {
+    background: linear-gradient(-45deg, #ffffff, #f0f0f0, #e6f5ea, #ffffff);
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
